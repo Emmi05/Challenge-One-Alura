@@ -1,0 +1,291 @@
+body{
+    background-color: #E5E5E5;
+    font-family:'Montserrat', sans-serif;
+}
+
+/* cambiar img a svg */
+/* debo cambiar en display no encontrado y mensaje encontrado para checar */
+main {
+    /* con esto lo q hago es hacerla en fila  */
+    display: flex;
+    flex-direction: row;
+    /* viewport, lo que mide nuestro navegador */
+    min-height: 100vh;
+}
+main .logo{
+    width: 10vw;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 2em;
+}
+main .logo img{
+    /* padding-left:2em ;
+    padding-top: 4em; */
+    width: 5em;
+
+}
+main .input_mensaje{
+    /* border: 2px solid green; */
+    /* tengo que poner cuanto medir */
+    width: 60vw;
+    /* le damos espacio arriba al textarea */
+    padding-top: 15vh;
+    /* lo centramos */
+    display: flex;
+    justify-content: center;
+    
+}
+
+main .input_mensaje .mensaje_contenedor{
+    width: 70%;
+    /* border: solid 2px #1b8b24; */
+}
+
+/* textarea */
+main .input_mensaje .mensaje_contenedor textarea{
+    width: 100%;
+    /* quitamos el puntero para que no se agrende o achique el textarea */
+    resize: none; 
+    background: transparent;
+    font-size: 2em;
+    /* border: 2px solid violet; */
+    border: none;
+    /* para que abarque más espacio y dejar los botones abajo */
+    height: 70vh;
+    padding: 0;
+    /* color: #0A3871; */
+    font-weight:500 ;
+
+}
+
+main .input_mensaje .mensaje_contenedor textarea::placeholder{
+    color:#0A3871;
+}
+
+main .input_mensaje .mensaje_contenedor textarea:focus{
+/* cuando toque no tendra ningun border */
+    outline: none;
+}
+
+main .input_mensaje .bottom{
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    padding-top: 1em;
+}
+
+
+/* AQUI LO DE LA ASIDE */
+main .resultado_mensaje{
+    /* border: 2px solid blue; */
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .resultado_mensaje .resultado{
+    background-color: #FFFF;
+    height: 90vh;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2em;
+    /* checar aqui */
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.97);
+    /* padding: 1.5em;  */
+    /* overflow: hidden; */
+}
+
+main .resultado_mensaje .resultado .mensaje{
+    overflow: auto;
+    margin-top: 1em;
+  /* aqui cambie algo para resposive */
+  /* max-height: 65vh; */
+    /* margin: 2.5em 0; */
+
+}
+
+main .resultado .no_encontrado{
+    text-align: center;
+}
+
+main .resultado .mensaje_encontrado{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+main .resultado .mensaje_encontrado h3{
+font-weight: 400;
+/* checar el tamaño del texto aside */
+font-size: 1em;
+}
+
+
+.mensaje{
+    height: 630px;
+    background: white;
+    background-image: url("img/Muñeco.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    border-radius: 24px;
+    color: #0A3871;
+    margin-left: 98px;
+    margin-top: 20px;
+    padding-left: 20px;
+    position: fixed;
+}
+.mensaje:focus {
+    outline: none;
+}
+
+
+
+
+main .resultado .mensaje_encontrado button{
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+main .resultado .no_encontrado img{
+width: 100%;
+}
+
+
+main .resultado .mensaje_encontrado , main .resultado .no_encontrado{
+padding: 2em;
+}
+
+
+
+main .resultado .mensaje_encontrado{
+    display: none;
+}
+
+
+
+main .buttons{
+    /* para que quede uno alado del otro */
+    display: flex;
+    flex-direction: row;
+    /* espacio */
+    gap: 1em;
+}
+main .button{
+padding: 1em;
+width: 100%;
+border-radius: 1em;
+border: none;
+/* border: 2px solid #0A3871; */
+/* checar */
+transition:border-color 250ms, background-color 250ms;
+}
+
+main .button:hover{
+    cursor: pointer;
+}
+
+main .button.button-primary{
+    background: #0A3871;
+    color: #FFFF;
+    font-weight: 500;
+}
+
+main .button.button-primary:hover{
+   background-color: #3e7ac4;
+   border-color:#3e7ac4 ;
+}
+
+
+main .button.button-secondary{
+    background: transparent;
+    color: #0A3871;
+    border: 2px solid #0A3871;
+    font-weight: 500;
+    
+}
+main .button.button-secondary:hover{
+    background-color: #D8DFE8;
+    /* border-color:#3e7ac4 ; */
+ }
+
+ main .bottom small{
+    color: #495057;
+    font-weight: 500;
+    display: flex;
+    align-items: end;
+ }
+ main .bottom small img{
+    padding-right: 0.25em;
+ }
+
+/* medias querys estilo resposivo */
+@media screen and (max-width:1400px) {
+    main .input_mensaje{
+        width: 50vw;
+    }
+    main .resultado_mensaje{
+        width: 40vw;
+    }
+    
+}
+
+@media screen and (max-width:1023px) {
+    main{
+        flex-direction: column;
+    }
+    main .logo, 
+    main .input_mensaje,
+    main .resultado_mensaje{
+        width: 100%;
+    }
+    main .logo{
+        justify-content: flex-start;
+        /* padding-left: 2em; */
+    }
+    main .logo img{
+        /* evito el scroll de la aplicación */
+        padding-left: 2em;
+    }
+    main .input_mensaje{
+        padding-top: 5vh;
+    }
+
+    main .input_mensaje .mensaje_contenedor{
+        width: 100%;
+        padding: 2em;
+        }
+    main .input_mensaje .mensaje_contenedor textarea{
+        height: 50vh;
+    }
+    main  .resultado_mensaje .resultado {
+        /* alineo el aside con los botones de encripar y desencriptar */
+        width: 100%;
+        margin: 2em;
+        height: auto;
+        /* scroll */
+        /* max-height: 65vh;  */
+    }
+    main  .resultado_mensaje .resultado img{
+        /* quito la img para tablet y para celular */
+        display: none;
+    }
+    main .resultado_mensaje .resultado .mensaje{
+         max-height: 65vh; 
+    }
+    main .resultado_mensaje .resultado .button{
+        margin-bottom: 0;
+    }
+}
+@media screen and (max-width:767px){
+    main .buttons{
+        flex-direction: column;
+    }
+    
+}

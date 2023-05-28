@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador Alura</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- google fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <main>
+        <!-- vamos a crear tres grandes divs para separar -->
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo alura">
+        </div>
+
+        <div class="input_mensaje">
+            <div class="mensaje_contenedor">
+                <textarea name="texto" id="texto" cols="30" rows="10" placeholder="ingrese el texto aqui"></textarea>
+                <div class="bottom">
+                    <small> <img src="img/icono.svg" alt="Icono"> Solo letras minisculas y sin acentos</small>
+                    <small>  Hecho por Emma Flores Carmona</small> 
+
+                    <div class="buttons">
+                        <button class="button button-primary" onclick="encriptar()">Encriptar</button>
+
+                        <!-- <button class="button button-primary" type="button" onclick="encriptar();">Encriptar</button> -->
+                        <button class="button button-secondary"type="button" onclick="desencriptar()">Desencriptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- contenedor principal -->
+
+        <div class="resultado_mensaje">
+            <!-- recuadro grande antes de la img -->
+            <div class="resultado">
+                <div class="no_encontrado">
+                    <img src="img/Muñeco.png" alt="No encontrado" id="muñeco">
+                   <!-- AQUI JS -->
+                    <h2 id="titulo-mensaje">Ningun mensaje fue encontrado</h2>
+                    <p id="parrafo"> el texto que deseas encriptar o desencriptar</p>
+                </div>
+                
+                <div class="mensaje_encontrado">
+                    
+                   <div class="mensaje">
+                    <!-- textarea????? -->
+                   <!-- <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus cumque, laborum et optio illo vitae explicabo iure possimus, quis fugit repudiandae ipsa veritatis, qui reprehenderit deserunt tempora sunt! Maiores, ipsam?</h3> --> -->
+                   </div>
+                 
+                <button class="button button-secondary">Copiar</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+   
+</body>
+<script src="main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</html>
